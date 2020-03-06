@@ -24,16 +24,16 @@ public class HomeViewPagerFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         binding = FragmentHomeViewPagerBinding.inflate(inflater,  container, false);
 
-//        binding.viewPager.setAdapter(new SunflowerPagerAdapter(this));
-//        new TabLayoutMediator(binding.tabs, binding.viewPager, new TabLayoutMediator.TabConfigurationStrategy() {
-//            @Override
-//            public void onConfigureTab(@NonNull TabLayout.Tab tab, int position) {
-//                tab.setIcon(getTabIcon(position));
-//                tab.setText(getTabTitle(position));
-//            }
-//        }).attach();
-//
-//        ((AppCompatActivity) getActivity()).setSupportActionBar(binding.toolbar);
+        binding.viewPager.setAdapter(new SunflowerPagerAdapter(this));
+        new TabLayoutMediator(binding.tabs, binding.viewPager, new TabLayoutMediator.TabConfigurationStrategy() {
+            @Override
+            public void onConfigureTab(@NonNull TabLayout.Tab tab, int position) {
+                tab.setIcon(getTabIcon(position));
+                tab.setText(getTabTitle(position));
+            }
+        }).attach();
+
+        ((AppCompatActivity) getActivity()).setSupportActionBar(binding.toolbar);
 
         return binding.getRoot();
     }

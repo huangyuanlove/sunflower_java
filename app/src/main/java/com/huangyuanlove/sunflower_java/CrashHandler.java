@@ -37,9 +37,6 @@ public class CrashHandler implements Thread.UncaughtExceptionHandler {
     @Override
     public void uncaughtException(Thread t, final Throwable e) {
 
-        context.startActivity(new Intent(context,CrashActivity.class));
-
-
         WriteLogToFile.writePushMessageToFile(t.getName());
         WriteLogToFile.writePushMessageToFile(e.getMessage());
 
