@@ -22,6 +22,10 @@
         <variable
             name="clickListener"
             type="android.view.View.OnClickListener"/>
+        <variable
+            name="plant"
+            type="com.huangyuanlove.sunflower_java.data.Plant"
+            />
 
     </data>
 
@@ -46,6 +50,7 @@
                     android:layout_height="@dimen/plant_item_image_height"
                     android:contentDescription="@string/a11y_plant_item_image"
                     android:scaleType="centerCrop"
+                    app:imageFromUrl="@{plant.imageUrl}"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -56,6 +61,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="@dimen/margin_normal"
                     android:layout_marginTop="@dimen/margin_normal"
+                    android:text="@{plant.name}"
                     android:textAppearance="?attr/textAppearanceListItem"
                     android:gravity="center_horizontal"
                     app:layout_constraintEnd_toEndOf="parent"

@@ -2,27 +2,26 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    app:startDestination="@id/main_page_fragment"
-    android:id="@+id/nav_garden">
+    android:id="@+id/nav_garden"
+    app:startDestination="@id/main_page_fragment">
 
     <fragment
-        tools:layout="@layout/fragment_home_view_pager"
         android:id="@+id/main_page_fragment"
-        android:name="com.huangyuanlove.sunflower_java.HomeViewPagerFragment">
+        android:name="com.huangyuanlove.sunflower_java.HomeViewPagerFragment"
+        tools:layout="@layout/fragment_home_view_pager">
         <action
             android:id="@+id/action_view_pager_fragment_to_plant_detail_fragment"
             app:destination="@id/plant_detail_fragment"
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
-            app:popExitAnim="@anim/slide_out_right"
-            />
+            app:popExitAnim="@anim/slide_out_right" />
 
     </fragment>
     <fragment
         android:id="@+id/plant_detail_fragment"
-        tools:layout="@layout/fragment_plant_detail"
-        android:name="com.huangyuanlove.sunflower_java.PlantDetailFragment">
+        android:name="com.huangyuanlove.sunflower_java.PlantDetailFragment"
+        tools:layout="@layout/fragment_plant_detail">
         <argument
             android:name="plantId"
             app:argType="string" />
