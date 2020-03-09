@@ -18,7 +18,7 @@ import com.huangyuanlove.sunflower_java.R;
 public class PlantDetailBindingAdapters {
 
     @BindingAdapter("imageFromUrl")
-    void bindImageFromUrl(ImageView imageView,String imageUrl){
+  public static  void bindImageFromUrl(ImageView imageView,String imageUrl){
         if(!TextUtils.isEmpty(imageUrl)){
             Glide.with(imageView.getContext())
                     .load(imageUrl)
@@ -27,7 +27,7 @@ public class PlantDetailBindingAdapters {
         }
     }
     @BindingAdapter("isGone")
-    void bindIsGone(FloatingActionButton view , boolean isGone) {
+    public static   void bindIsGone(FloatingActionButton view , boolean isGone) {
         if (isGone) {
             view.hide();
         } else {
@@ -36,7 +36,7 @@ public class PlantDetailBindingAdapters {
     }
 
     @BindingAdapter("renderHtml")
-    void bindRenderHtml(TextView view , String description) {
+    public static   void bindRenderHtml(TextView view , String description) {
         if (description != null) {
             view.setText(HtmlCompat.fromHtml(description, HtmlCompat.FROM_HTML_MODE_COMPACT));
             view.setMovementMethod(LinkMovementMethod.getInstance());
@@ -46,7 +46,7 @@ public class PlantDetailBindingAdapters {
     }
 
     @BindingAdapter("wateringText")
-    void bindWateringText(TextView textView ,int wateringInterval) {
+    public static   void bindWateringText(TextView textView ,int wateringInterval) {
         Resources resources = textView.getContext().getResources();
         String quantityString = resources.getQuantityString(R.plurals.watering_needs_suffix,
                 wateringInterval, wateringInterval);

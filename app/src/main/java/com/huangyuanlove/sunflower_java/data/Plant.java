@@ -14,6 +14,7 @@ public class Plant {
 
     @PrimaryKey
     @ColumnInfo(name = "id")
+    @NonNull
     private String plantId;
     private String name;
     private String description;

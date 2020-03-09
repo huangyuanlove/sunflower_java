@@ -10,9 +10,9 @@ import java.util.List;
 public class PlantAndGardenPlantings {
 
     @Embedded
-  public  Plant plant;
+    public Plant plant;
 
     @Relation(parentColumn = "id", entityColumn = "plant_id")
-    List<GardenPlanting> gardenPlantings =  Collections.emptyList();
+    public List<GardenPlanting> gardenPlantings = Collections.emptyList();
 
 }

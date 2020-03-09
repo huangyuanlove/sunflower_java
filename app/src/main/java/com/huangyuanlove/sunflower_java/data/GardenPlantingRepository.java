@@ -12,20 +12,20 @@ public class GardenPlantingRepository {
         this.gardenPlantingDao = gardenPlantingDao;
     }
 
-    void createGardenPlanting(String plantId){
+    public void createGardenPlanting(String plantId){
         GardenPlanting gardenPlanting = new GardenPlanting(plantId);
         gardenPlantingDao.insertGardenPlanting(gardenPlanting);
     }
 
-    void removeGardenPlanting(GardenPlanting gardenPlanting){
+    public void removeGardenPlanting(GardenPlanting gardenPlanting){
         gardenPlantingDao.deleteGardenPlanting(gardenPlanting);
     }
 
-    LiveData<Boolean> isPlanted(String plantId){
+    public  LiveData<Boolean> isPlanted(String plantId){
         return  gardenPlantingDao.isPlanted(plantId);
     }
 
-    LiveData<List<PlantAndGardenPlantings>> getPlantedGardens(){
+    public LiveData<List<PlantAndGardenPlantings>> getPlantedGardens(){
         return gardenPlantingDao.getPlantedGardens();
     }
 
