@@ -19,7 +19,11 @@ public class MaskedCardView extends MaterialCardView {
     private ShapeAppearanceModel shapeAppearanceModel;
     private RectF rectF = new RectF(0f, 0f, 0f, 0f);
 
-    public MaskedCardView(Context context, AttributeSet attrs,int defStyleAttr) {
+    public MaskedCardView(Context context, AttributeSet attrs) {
+        this(context, attrs,0);
+    }
+
+    public MaskedCardView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, R.attr.materialCardViewStyle);
         path = new Path();
         pathProvider = new ShapeAppearancePathProvider();

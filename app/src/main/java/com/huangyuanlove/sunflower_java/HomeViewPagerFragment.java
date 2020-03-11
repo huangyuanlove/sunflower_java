@@ -25,7 +25,8 @@ public class HomeViewPagerFragment extends Fragment {
         binding = FragmentHomeViewPagerBinding.inflate(inflater,  container, false);
 
         binding.viewPager.setAdapter(new SunflowerPagerAdapter(this));
-        new TabLayoutMediator(binding.tabs, binding.viewPager, new TabLayoutMediator.TabConfigurationStrategy() {
+        new TabLayoutMediator(binding.tabs, binding.viewPager, new TabLayoutMediator.OnConfigureTabCallback(){
+
             @Override
             public void onConfigureTab(@NonNull TabLayout.Tab tab, int position) {
                 tab.setIcon(getTabIcon(position));
