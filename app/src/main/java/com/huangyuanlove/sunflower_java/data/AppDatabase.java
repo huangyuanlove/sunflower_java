@@ -24,7 +24,7 @@ import com.huangyuanlove.sunflower_java.workers.SeedDatabaseWorker;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-@Database(entities = {GardenPlanting.class, Plant.class}, version = 1, exportSchema = false)
+@Database(entities = {GardenPlanting.class, Plant.class}, version = 1, exportSchema = true)
 @TypeConverters(Converters.class)
 public abstract class AppDatabase extends RoomDatabase {
 
@@ -33,10 +33,6 @@ public abstract class AppDatabase extends RoomDatabase {
     public abstract PlantDao plantDao();
 
     private static volatile AppDatabase INSTANCE;
-    private static final int NUMBER_OF_THREADS = 4;
-
-    static final ExecutorService databaseWriteExecutor =
-            Executors.newFixedThreadPool(NUMBER_OF_THREADS);
 
 
     private static AppDatabase buildDatabase(Context context ) {

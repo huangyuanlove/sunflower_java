@@ -3,6 +3,7 @@ package com.huangyuanlove.sunflower_java.data;
 import androidx.room.Embedded;
 import androidx.room.Relation;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
@@ -13,6 +14,6 @@ public class PlantAndGardenPlantings {
     public Plant plant;
 
     @Relation(parentColumn = "id", entityColumn = "plant_id")
-    public List<GardenPlanting> gardenPlantings = Collections.emptyList();
+    public List<GardenPlanting> gardenPlantings = new ArrayList<>();
 
 }

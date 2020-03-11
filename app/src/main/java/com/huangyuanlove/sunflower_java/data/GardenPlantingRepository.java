@@ -12,37 +12,36 @@ public class GardenPlantingRepository {
         this.gardenPlantingDao = gardenPlantingDao;
     }
 
-    public void createGardenPlanting(String plantId){
+    public void createGardenPlanting(String plantId) {
         GardenPlanting gardenPlanting = new GardenPlanting(plantId);
         gardenPlantingDao.insertGardenPlanting(gardenPlanting);
     }
 
-    public void removeGardenPlanting(GardenPlanting gardenPlanting){
+    public void removeGardenPlanting(GardenPlanting gardenPlanting) {
         gardenPlantingDao.deleteGardenPlanting(gardenPlanting);
     }
 
-    public  LiveData<Boolean> isPlanted(String plantId){
-        return  gardenPlantingDao.isPlanted(plantId);
+    public LiveData<Boolean> isPlanted(String plantId) {
+        return gardenPlantingDao.isPlanted(plantId);
     }
 
-    public LiveData<List<PlantAndGardenPlantings>> getPlantedGardens(){
+    public LiveData<List<PlantAndGardenPlantings>> getPlantedGardens() {
         return gardenPlantingDao.getPlantedGardens();
     }
 
 
-    volatile  private static GardenPlantingRepository instance ;
-    public static GardenPlantingRepository getInstance(GardenPlantingDao gardenPlantingDao){
-        if(instance ==null){
-            synchronized (GardenPlantingRepository.class){
-                if(instance ==null){
+    volatile private static GardenPlantingRepository instance;
+
+    public static GardenPlantingRepository getInstance(GardenPlantingDao gardenPlantingDao) {
+        if (instance == null) {
+            synchronized (GardenPlantingRepository.class) {
+                if (instance == null) {
                     instance = new GardenPlantingRepository(gardenPlantingDao);
                 }
             }
         }
         return instance;
     }
-
-
 
 
 }

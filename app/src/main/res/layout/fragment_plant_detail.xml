@@ -16,12 +16,11 @@
 
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
-        tools:context="com.huangyuanlove.sunflower_java.MainActivity"
-        tools:ignore="MergeRootFrame"
-        android:background="?attr/colorSurface"
-        android:fitsSystemWindows="true"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        android:background="?attr/colorSurface"
+        tools:ignore="MergeRootFrame">
 
         <com.google.android.material.appbar.AppBarLayout
             android:id="@+id/appbar"
@@ -160,7 +159,6 @@
             app:layout_anchor="@id/appbar"
             app:layout_anchorGravity="bottom|end"
             app:srcCompat="@drawable/ic_plus" />
-
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 

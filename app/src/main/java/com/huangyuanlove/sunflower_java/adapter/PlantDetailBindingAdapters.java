@@ -6,6 +6,7 @@ import android.text.method.LinkMovementMethod;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.core.text.HtmlCompat;
 import androidx.databinding.BindingAdapter;
 
@@ -18,17 +19,23 @@ import com.huangyuanlove.sunflower_java.R;
 public class PlantDetailBindingAdapters {
 
     @BindingAdapter("imageFromUrl")
-  public static  void bindImageFromUrl(ImageView imageView,String imageUrl){
-        if(!TextUtils.isEmpty(imageUrl)){
+    public static void bindImageFromUrl(ImageView imageView, String imageUrl) {
+        if (!TextUtils.isEmpty(imageUrl)) {
             Glide.with(imageView.getContext())
                     .load(imageUrl)
                     .transition(DrawableTransitionOptions.withCrossFade())
                     .into(imageView);
         }
     }
+
     @BindingAdapter("isGone")
-    public static   void bindIsGone(FloatingActionButton view , boolean isGone) {
+    public static void bindIsGone(FloatingActionButton view, boolean isGone) {
         if (isGone) {
+            CoordinatorLayout.LayoutParams params = (CoordinatorLayout.LayoutParams) view.getLayoutParams();
+            FloatingActionButton.Behavior behavior = (FloatingActionButton.Behavior) params.getBehavior();
+            behavior.setAutoHideEnabled(false);
+            params.setBehavior(behavior);
+            view.setLayoutParams(params);
             view.hide();
         } else {
             view.show();
@@ -36,7 +43,7 @@ public class PlantDetailBindingAdapters {
     }
 
     @BindingAdapter("renderHtml")
-    public static   void bindRenderHtml(TextView view , String description) {
+    public static void bindRenderHtml(TextView view, String description) {
         if (description != null) {
             view.setText(HtmlCompat.fromHtml(description, HtmlCompat.FROM_HTML_MODE_COMPACT));
             view.setMovementMethod(LinkMovementMethod.getInstance());
@@ -46,7 +53,7 @@ public class PlantDetailBindingAdapters {
     }
 
     @BindingAdapter("wateringText")
-    public static   void bindWateringText(TextView textView ,int wateringInterval) {
+    public static void bindWateringText(TextView textView, int wateringInterval) {
         Resources resources = textView.getContext().getResources();
         String quantityString = resources.getQuantityString(R.plurals.watering_needs_suffix,
                 wateringInterval, wateringInterval);

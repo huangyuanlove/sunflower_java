@@ -2,6 +2,9 @@ package com.huangyuanlove.sunflower_java;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -37,10 +40,34 @@ public class PlantListFragment extends Fragment {
         PlantListViewModelFactory factory =  new PlantListViewModelFactory(PlantRepository.getInstance(plantDao));
         viewModel = factory.create(PlantListViewModel.class);
 
-
+        setHasOptionsMenu(true);
         subscribeUi(adapter);
         return binding.getRoot();
     }
+
+    @Override
+    public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
+        inflater.inflate(R.menu.menu_plant_list, menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if(item.getItemId() == R.id.filter_zone){
+            updateData();
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
+    private void updateData() {
+        if(viewModel.isFiltered()){
+            viewModel.clearGrowZoneNumber();
+        }else{
+            viewModel.setGrowZoneNumber(9);
+        }
+    }
+
 
     private void subscribeUi(PlanAdapter adapter) {
         viewModel.getPlants().observe(getViewLifecycleOwner(), new Observer<List<Plant>>() {

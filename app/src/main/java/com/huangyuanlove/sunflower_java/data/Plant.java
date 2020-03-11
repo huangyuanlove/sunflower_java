@@ -23,14 +23,13 @@ public class Plant {
     private String imageUrl = "";
 
 
-    public boolean shouldBeWatered(Calendar since,Calendar lastWateringDate){
+    public boolean shouldBeWatered(Calendar since, Calendar lastWateringDate) {
 
-        lastWateringDate.add(Calendar.DAY_OF_YEAR,wateringInterval);
-       return  since.getTimeInMillis()>  lastWateringDate.getTimeInMillis();
+        lastWateringDate.add(Calendar.DAY_OF_YEAR, wateringInterval);
+        return since.getTimeInMillis() > lastWateringDate.getTimeInMillis();
 
 
     }
-
 
 
     public String getPlantId() {

@@ -11,7 +11,6 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.viewpager2.widget.ViewPager2;
 
-import com.bumptech.glide.Glide;
 import com.huangyuanlove.sunflower_java.adapter.GardenPlantingAdapter;
 import com.huangyuanlove.sunflower_java.adapter.SunflowerPagerAdapter;
 import com.huangyuanlove.sunflower_java.data.AppDatabase;
@@ -54,6 +53,7 @@ public class GardenFragment extends Fragment {
         gardenPlantingListViewModel.getPlantAndGardenPlantings().observe(getViewLifecycleOwner(), new Observer<List<PlantAndGardenPlantings>>() {
             @Override
             public void onChanged(List<PlantAndGardenPlantings> plantAndGardenPlantings) {
+                binding.setHasPlantings(!(plantAndGardenPlantings==null || plantAndGardenPlantings.size()==0));
                 adapter.submitList(plantAndGardenPlantings);
             }
         });
