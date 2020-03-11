@@ -1,8 +1,6 @@
 package com.huangyuanlove.sunflower_java.workers;
 
 import android.content.Context;
-import android.util.Log;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.work.Worker;
@@ -19,12 +17,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.List;
 
-/**
- * Description:
- * Author: huangyuan
- * Create on: 2020/3/9
- * Email: huangyuan@chunyu.me
- */
+
 public class SeedDatabaseWorker extends Worker {
     public SeedDatabaseWorker(@NonNull Context context, @NonNull WorkerParameters workerParams) {
         super(context, workerParams);

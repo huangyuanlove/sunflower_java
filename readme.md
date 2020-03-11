@@ -20,3 +20,12 @@ sunflower的java版本：园艺应用程序，说明了使用Android Jetpack进�
 4. 植物详情：PlantDetailFragment
 5. 数据来源：assets中的plants.json
 
+#### 结构简介
+1. adapter:包含DatabindingAdapter,ListViewAdapter
+2. data:数据库、实体类、DAO
+3. utilities:常量字段
+4. viewmodels:各个视图所需的ViewModel
+5. widget:自定义控件
+6. workers:
+
+

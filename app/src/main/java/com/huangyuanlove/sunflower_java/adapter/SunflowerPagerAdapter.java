@@ -1,7 +1,5 @@
 package com.huangyuanlove.sunflower_java.adapter;
 
-import android.util.ArrayMap;
-
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager2.adapter.FragmentStateAdapter;

@@ -2,7 +2,6 @@ package com.huangyuanlove.sunflower_java;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -15,24 +14,19 @@ import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.core.app.ShareCompat;
 import androidx.core.widget.NestedScrollView;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
 import androidx.navigation.Navigation;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 import com.huangyuanlove.sunflower_java.data.AppDatabase;
-import com.huangyuanlove.sunflower_java.data.GardenPlanting;
 import com.huangyuanlove.sunflower_java.data.GardenPlantingDao;
 import com.huangyuanlove.sunflower_java.data.GardenPlantingRepository;
 import com.huangyuanlove.sunflower_java.data.Plant;
-import com.huangyuanlove.sunflower_java.data.PlantAndGardenPlantings;
 import com.huangyuanlove.sunflower_java.data.PlantDao;
 import com.huangyuanlove.sunflower_java.data.PlantRepository;
 import com.huangyuanlove.sunflower_java.databinding.FragmentPlantDetailBinding;
 import com.huangyuanlove.sunflower_java.viewmodels.PlantDetailViewModel;
 import com.huangyuanlove.sunflower_java.viewmodels.PlantDetailViewModelFactory;
-
-import java.util.List;
 
 public class PlantDetailFragment extends Fragment {
 

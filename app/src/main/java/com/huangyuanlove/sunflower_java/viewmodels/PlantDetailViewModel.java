@@ -1,8 +1,6 @@
 package com.huangyuanlove.sunflower_java.viewmodels;
 
 
-import android.util.Log;
-
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.ViewModel;
 
